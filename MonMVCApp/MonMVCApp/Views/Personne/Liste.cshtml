@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Liste";
+}
+
+@model  IEnumerable<MonMVCApp.Models.Personne>
+
+<h2>Liste</h2>
+
+<p>
+    La vue qui affiche la liste des personnes
+</p>
+
+<table class="table">
+    <tr>
+        <th>Nom</th>
+        <th>Age</th>
+        <th>Email</th>
+    </tr>
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>@p.Nom</td>
+            <td>@p.Age</td>
+            <td>@p.Email</td>
+        </tr>
+    }
+
+</table>

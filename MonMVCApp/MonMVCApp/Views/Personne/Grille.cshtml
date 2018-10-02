@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Grille";
+}
+
+@using GridMvc.Html
+
+@model IEnumerable<MonMVCApp.Models.Personne>
+
+
+<h2>Grille</h2>
+
+@Html.Grid(Model).Columns(cols =>
+{
+    cols.Add(p => p.Nom).Filterable(true);
+    cols.Add(p => p.Age).Sortable(true);
+    cols.Add(p => p.Email).Filterable(true);
+}).WithPaging(5)
